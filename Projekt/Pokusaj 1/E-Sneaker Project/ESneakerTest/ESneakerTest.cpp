@@ -13,8 +13,7 @@ int main()
     //*******Opcenito*******
     string DaNe;
     int n;
-    int polje[16] = { 35, 36, 37, 38, 39, 40, 41, 42 ,43, 44, 45, 46, 47, 48, 49, 50 };
-    int ddpolje[100][100];
+    int* ddpolje = new int[100 * 100]; 
     int s;
 
     //*******Korisnik*******
@@ -120,7 +119,7 @@ int main()
             int i = 0;
             int x = 0;
             while (i < n && x == brT) {
-                cin>> ddpolje[i][x];
+                cin>> ddpolje[i&x];
                 i++;
             }
             cout << "Unesite dostupne boje: ";
@@ -142,10 +141,10 @@ int main()
                 cin >> s;
                 int x = 0;
                 int p = 0;
-                while (x == s - 1 && i <= sizeof(ddpolje[p][x])) {
+                while (x == s - 1 && p <= sizeof(ddpolje[p*x])) {
                     cout << i;
-                    cout << ddpolje[i][x];
-                    i++;
+                    cout << ddpolje[p&x];
+                    p++;
                 }
                 cout << "Boje: "<<boja[i]<<endl;
                 cout << "Cijena: "<<cijena[i]<<endl;
@@ -163,7 +162,7 @@ int main()
             for (int i = 0; i < brT; i++)
             {
                 cout << "Naziv: " << Naziv[i];
-                cout << "Velicine: " << Velicina[i];
+                cout << "Velicine: " << Ve[i];
                 cout << "Boje: " << boja[i];
                 cout << "Cijena: " << cijena[i];
             }
