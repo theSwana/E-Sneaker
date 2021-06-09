@@ -1,0 +1,5 @@
+﻿  E-Sneaker Project.cpp
+C:\Users\user\Documents\GitHub\E-Sneaker\Projekt\Pokusaj 1\E-Sneaker Project\E-Sneaker Project\E-Sneaker Project.cpp(79,11): warning C4101: 'uv3': unreferenced local variable
+C:\Users\user\Documents\GitHub\E-Sneaker\Projekt\Pokusaj 1\E-Sneaker Project\E-Sneaker Project\E-Sneaker Project.cpp(73,11): warning C4101: 'uv2': unreferenced local variable
+C:\Users\user\Documents\GitHub\E-Sneaker\Projekt\Pokusaj 1\E-Sneaker Project\E-Sneaker Project\E-Sneaker Project.cpp(85,11): warning C4101: 'uv4': unreferenced local variable
+  E-Sneaker Project.vcxproj -> C:\Users\user\Documents\GitHub\E-Sneaker\Projekt\Pokusaj 1\E-Sneaker Project\x64\Debug\E-Sneaker Project.exe
