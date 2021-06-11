@@ -12,6 +12,8 @@ int main()
 {
     //*******Opcenito*******
     string DaNe;
+    float suma = 0;
+    int aa = 0;
 
     //*******Korisnik*******
     int izbor;
@@ -26,7 +28,6 @@ int main()
     string* Naziv = new string[200];
     double* cijena = new double[200];;
     int brT = 0;
-    int brojtenisica;
 
     //*******Kupnja*********
     int brKU = 0;
@@ -134,6 +135,8 @@ int main()
         }
         else if (izbor == 5)
         {
+            kupnjajump:
+            cout << "\n";
             cout << "Izbor tenisica: ";
             for (int i = 0; i < brT; i++) {
                 cout << "\n";
@@ -145,19 +148,24 @@ int main()
             }
             cout << "Unesite koje biste tenisice voljeli kupiti: ";
             cin >> ez;
-            for (int i = 0; i == (ez - 1); i++) {
+            
+            aa = (ez - 1);
                 cout << "\n";
-                cout << "Odabrali ste tenisice [" << Naziv[i] << "]"<<"\n";
+                cout << "Odabrali ste tenisice [" << Naziv[aa] << "]"<<"\n";
                 cout << "Unesite zeljenu boju tenisica: \n";
                 cin.ignore();
                 getline(cin, boja[brKU]);
                 cout << "Vasa velicina tenisica je: " << Velicina<<"\n";
-                cout << "Cijena tenisica je: " << cijena[i] << " kn"<<"\n";
-                ImeTenisica[brKU] = Naziv[i];
+                cout << "Cijena tenisica je: " << cijena[aa] << " kn"<<"\n";
+                ImeTenisica[brKU] = Naziv[aa];
                 brKU++;
-            }
+                suma += cijena[aa];
+                aa++;
+            
             
             system("pause");
+            rednibroj = 1;
+
         }
         else if (izbor == 6)
         {
@@ -169,7 +177,39 @@ int main()
                 cout << "Velicina: "<<Velicina<<endl;
                 cout << "Cijena: "<<cijena[i]<<endl;
             }
-            cout << "\n: ";
+            cout << "\n ";
+            cout << "Odaberite od ponudenog: \n";
+            cout << "1. Nastavite kupnju \n";
+            cout << "2. Otidite na placanje \n";
+            cout << "3. Obrisite proizvod iz kosarice \n";
+            cout << "4. Vratite se u pocetni menu\n";
+            cin >> izbor;
+            cout << "Vas odabir je: " << izbor;
+            if (izbor == 1)
+            {
+                cout << "Nastavak kupnje";
+                system("pause");
+                goto kupnjajump;
+            }
+            else if (izbor==2)
+            {
+                cout << "   Racun\n";
+                cout << "\n";
+                for (int i = 0; i < brKU; i++) {
+                    cout << "\n";
+                    cout << "Tenisice: " << ImeTenisica[i] << endl;
+                    cout << "Boja: " << boja[i] << endl;
+                    cout << "Cijena: " << cijena[i] << endl;
+                    cout << "\n";
+                }
+                cout << "Ukupna cijena za placanje: " << suma << " kn";
+                if (stanje[0] - suma < 0) {
+                    cout << "Placanje neuspjesno, nedovoljno kredita na racunu !";
+               }
+                else {
+                    stanje[0] = stanje[0] - suma;
+                }
+            }
             
             system("pause");
         }
@@ -182,6 +222,7 @@ int main()
             cout << "   ! OVO NIJE STRANICA TAKVE VRSTE !"<<endl;
             cout << "        ! SRAM TE I STID BILO !"<<endl;
             cout << "   ! SAD SE VRATI NA POCETNI MENU !"<<endl;
+            cout << "      ! JEBOTE ISUS MRTVI !"<<endl;
             system("pause");
             goto jump;
             

@@ -1,3 +1,3 @@
 ﻿  ESneakerTest.cpp
-C:\Users\user\Documents\GitHub\E-Sneaker\Projekt\Pokusaj 1\E-Sneaker Project\ESneakerTest\ESneakerTest.cpp(29,9): warning C4101: 'brojtenisica': unreferenced local variable
+C:\Users\user\Documents\GitHub\E-Sneaker\Projekt\Pokusaj 1\E-Sneaker Project\ESneakerTest\ESneakerTest.cpp(162,35): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
   ESneakerTest.vcxproj -> C:\Users\user\Documents\GitHub\E-Sneaker\Projekt\Pokusaj 1\E-Sneaker Project\x64\Debug\ESneakerTest.exe
