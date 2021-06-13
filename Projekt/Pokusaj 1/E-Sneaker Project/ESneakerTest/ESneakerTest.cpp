@@ -34,6 +34,8 @@ int main()
     string* ImeTenisica = new string[200];
     string* boja = new string[200];
     int rednibroj = 1;
+    string* BOJA = new string[1000];
+    double* CIJENA = new double[1000];
     int ez;
 
 
@@ -158,6 +160,7 @@ int main()
                 cout << "Vasa velicina tenisica je: " << Velicina<<"\n";
                 cout << "Cijena tenisica je: " << cijena[aa] << " kn"<<"\n";
                 ImeTenisica[brKU] = Naziv[aa];
+                BOJA[brKU] = boja[aa];
                 brKU++;
                 suma += cijena[aa];
                 aa++;
@@ -208,7 +211,26 @@ int main()
                }
                 else {
                     stanje[0] = stanje[0] - suma;
+                    cout << "placanje uspjesno izvrseno";
+                    system("pause");
                 }
+                
+            }
+            else if (izbor == 3) {
+                cout << "Odaberite proizvod: \n";
+                for (int i = 0; i < brT; i++) {
+                    cout << "\n";
+                    cout << rednibroj << "." << endl;
+                    cout << "Naziv: " << Naziv[i] << endl;
+                    cout << "Cijena: " << cijena[i] << endl;
+                    cout << "\n";
+                    rednibroj++;
+                }
+                cout << ">>";
+                cin >> izbor;
+                
+                
+
             }
             
             system("pause");
@@ -222,7 +244,6 @@ int main()
             cout << "   ! OVO NIJE STRANICA TAKVE VRSTE !"<<endl;
             cout << "        ! SRAM TE I STID BILO !"<<endl;
             cout << "   ! SAD SE VRATI NA POCETNI MENU !"<<endl;
-            cout << "      ! JEBOTE ISUS MRTVI !"<<endl;
             system("pause");
             goto jump;
             
