@@ -14,7 +14,6 @@ int main()
     string DaNe;
     float suma = 0;
     int aa = 0;
-   
 
     //*******Korisnik*******
     int izbor;
@@ -70,7 +69,8 @@ int main()
                 cout << "* Unesite svoj username: ";
                 cin.ignore();
                 getline(cin, IDD[brk]);
-                cout << "* Unesite svoj password: "<<password[brk];
+                cout << "* Unesite svoj password: ";
+                cin >> password[brk];
                 cout << "* Unesite ime i prezime: ";
                 cin.ignore();
                 getline(cin, IMEIPREZIME[brk]);
@@ -109,6 +109,7 @@ int main()
 
                 cout << "=> Username: " << IDD[i] << endl;
                 cout << "=> Ime i prezime: " << IMEIPREZIME[i] << endl;
+                cout << "=> password: " << password[i] << endl;
                 cout << "=> Preferirana velicina cipela: " << Velicina<<" (EU)" << endl;
                 cout << "=> Stanje na racunu: " << stanje[i] << " kn" << endl;
                 cout << "\n";
@@ -231,9 +232,8 @@ int main()
         }
         else if (izbor == 69)
         {
-            cout << "   ! OVO NIJE STRANICA TAKVE VRSTE !"<<endl;
-            cout << "        ! SRAM TE I STID BILO !"<<endl;
-            cout << "   ! SAD SE VRATI NA POCETNI MENU !"<<endl;
+            cout << "   NE!"<<endl;
+
             system("pause");
             goto jump;
             
