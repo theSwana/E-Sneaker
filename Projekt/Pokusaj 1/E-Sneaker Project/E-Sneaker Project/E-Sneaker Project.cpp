@@ -41,11 +41,11 @@ int main()
     int ez;
 
 
-    while (1)
-    {
-    jump:
+    while (1){
+        jump:
         system("cls");
-        cout << "*   DOBRODOSLI U E-SNEAKER  *";//Izbornik
+        cout << "\n";
+        cout << "       *   DOBRODOSLI U E-SNEAKER  *";//Izbornik
         cout << "\n";
         cout << "\n";
         cout << "   IZBORNIK: ";
