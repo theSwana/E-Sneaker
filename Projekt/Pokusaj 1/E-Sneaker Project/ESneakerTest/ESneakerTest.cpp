@@ -1,10 +1,10 @@
 #include <iostream>
+#include <fstream>
 #include <utility>
 #include <algorithm>
 #include <numeric>
 #include<string>
 using namespace std;
-
 
 
 
@@ -14,12 +14,13 @@ int main()
     string DaNe;
     float suma = 0;
     int aa = 0;
+   
 
     //*******Korisnik*******
     int izbor;
     string* IDD = new  string[2];
-    string* password = new  string[2];
     string* IMEIPREZIME = new string[2];
+    string* password = new string[2];
     long double* stanje = new long double[2];
     float Velicina;
     int brk = 0;
@@ -64,11 +65,12 @@ int main()
         {
         skr:
             if (brk == 0) {
+
+
                 cout << "* Unesite svoj username: ";
                 cin.ignore();
                 getline(cin, IDD[brk]);
-                cout << "* Unesite svoj password: ";
-                cin >> password[brk];
+                cout << "* Unesite svoj password: "<<password[brk];
                 cout << "* Unesite ime i prezime: ";
                 cin.ignore();
                 getline(cin, IMEIPREZIME[brk]);
@@ -184,8 +186,7 @@ int main()
             cout << "Odaberite od ponudenog: \n";
             cout << "1. Nastavite kupnju \n";
             cout << "2. Otidite na placanje \n";
-            cout << "3. Obrisite proizvod iz kosarice \n";
-            cout << "4. Vratite se u pocetni menu\n";
+            cout << "3. Vratite se u pocetni menu\n";
             cin >> izbor;
             cout << "Vas odabir je: " << izbor;
             if (izbor == 1)
@@ -205,30 +206,19 @@ int main()
                     cout << "Cijena: " << cijena[i] << endl;
                     cout << "\n";
                 }
-                cout << "Ukupna cijena za placanje: " << suma << " kn";
+                cout << "Ukupna cijena za placanje: " << suma << " kn"<<endl;
                 if (stanje[0] - suma < 0) {
-                    cout << "Placanje neuspjesno, nedovoljno kredita na racunu !";
+                    cout << "Placanje neuspjesno, nedovoljno kredita na racunu !"<<endl;
                }
                 else {
                     stanje[0] = stanje[0] - suma;
-                    cout << "placanje uspjesno izvrseno";
+                    cout << "placanje uspjesno izvrseno"<<endl;
                     system("pause");
                 }
                 
             }
             else if (izbor == 3) {
-                cout << "Odaberite proizvod: \n";
-                for (int i = 0; i < brT; i++) {
-                    cout << "\n";
-                    cout << rednibroj << "." << endl;
-                    cout << "Naziv: " << Naziv[i] << endl;
-                    cout << "Cijena: " << cijena[i] << endl;
-                    cout << "\n";
-                    rednibroj++;
-                }
-                cout << ">>";
-                cin >> izbor;
-                
+                goto jump;
                 
 
             }
