@@ -83,7 +83,7 @@ int main()
                 cin >> stanje[brk];
                 system("pause");
                 brk++;
-                data << IDD;
+                data.write((char*)&IDD, sizeof(IDD));
                 data.write((char*)&password, sizeof(password));
                 data.write((char*)&Velicina, sizeof(Velicina));
                 data.close();
