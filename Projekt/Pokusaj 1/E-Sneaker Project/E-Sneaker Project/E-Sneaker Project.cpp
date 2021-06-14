@@ -227,6 +227,10 @@ int main()
             else if (izbor == 3) {
                 goto jump;
             }
+            else {
+                cout << "Krivi unos!";
+                goto jump;
+            }
 
             system("pause");
         }
