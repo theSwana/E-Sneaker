@@ -51,7 +51,7 @@ int main()
         cout << "   IZBORNIK: ";
         cout << "\n";
         cout << "   1. Sign up\n";
-        cout << "   2. Informacije o racunu\n";
+        cout << "   2. Informacije o racunu i opcija promjena stanja na racunu\n";
         cout << "   3. Dodavanje tenisica\n";
         cout << "   4. Pregled dostupnih tenisica\n";
         cout << "   5. Kupovina\n";
@@ -83,7 +83,6 @@ int main()
                 cin >> stanje[brk];
                 system("pause");
                 brk++;
-                data.write((char*)&password, sizeof(password));
                 data.write((char*)&password, sizeof(password));
                 data.write((char*)&Velicina, sizeof(Velicina));
                 data.write((char*)&stanje, sizeof(stanje));
@@ -121,6 +120,24 @@ int main()
                 cout << "=> password: " << password[i] << endl;
                 cout << "=> Preferirana velicina cipela: " << Velicina << " (EU)" << endl;
                 cout << "=> Stanje na racunu: " << stanje[i] << " kn" << endl;
+                cout << "\n";
+            }
+            cout << "Zelite li promijeniti stanje na racunu? (Da/Ne)"<<endl;
+            cin >> DaNe;
+            if (DaNe == "Da") {
+                cout << "\n";
+                cout << "Unesite novo stanje na racunu: " << endl;
+                cout << ">>";
+                cin >> stanje[brk-1];
+                data.write((char*)&stanje, sizeof(stanje));
+                data.close();
+            }
+            else if (DaNe == "Ne") {
+                cout << "\n";
+                cout << "Povratak na glavni izbornik"<<endl;
+                cout << "\n";
+                cout << "\n";
+                cout << "\n";
                 cout << "\n";
             }
             system("pause");
