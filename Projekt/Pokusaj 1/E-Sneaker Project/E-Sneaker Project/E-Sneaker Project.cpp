@@ -250,6 +250,7 @@ int main()
                         ImeTenisica[brKU];
                         BOJA[brKU];
                         brKU--;
+                        suma = 0;
                     }
                     system("pause");
                 }
