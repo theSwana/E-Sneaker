@@ -112,6 +112,8 @@ int main()
         }
         else if (izbor == 2)//ispis korisnickih podataka
         {
+        skrskr:
+            system("cls");     
             for (int i = 0; i < brk; i++)
             {
 
@@ -140,7 +142,15 @@ int main()
                 cout << "\n";
                 cout << "\n";
             }
+            else {
+                cout << "\n";
+                cout << "Krivi Unos !" << endl;
+                system("pause");
+                goto skrskr;
+                
+            }
             system("pause");
+            
         }
         else if (izbor == 3)//unos tenisica 
         {
